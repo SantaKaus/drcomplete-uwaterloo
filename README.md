@@ -1,1 +1,3 @@
-# drcomplete-uwaterloo
+drcomplete-uwaterloo
+====================
+README text here.
