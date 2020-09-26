@@ -41,6 +41,25 @@
     ("ctr" ";; "           ":  -> \n")
     ("req" ";; Requires: " "\n")
     ("tst" ";; Tests:\n"   "")
+    ("ctd"  ";; (countdown n) " "
+;; Examples:
+(check-expect (countdown 0) (cons 0 empty) )
+(check-expect (countdown 2) (cons 2 (cons 1 (cons 0 empty))))\n\n
+;; countdown: Nat -> (listof Nat)
+(define (countdown n) ...
+  (cond [(zero? n) (cons 0 empty)]
+        [else (cons n (countdown (sub1 n)))]))\n
+;; Tests")
+    ("nelox"  ";; (ne-listof-X-template nelox) " "
+;; Examples:
+(check-expect (ne-listof-X-template (cons X empty)) Answer)
+(check-expect (ne-listof-X-template (cons X (cons Y empty))) Answer)\n\n
+;; ne-listof-X-template: (ne-listof X) -> Any
+(define (ne-listof-X-template nelox) ...
+  (cond [(empty? (rest nelox) (...(first nelox))]
+        [else (... (first nelox)
+                   (rest nelox))])\n
+;; Tests")
     ("lox"  ";; (listof-X-template lox) " "
 ;; Examples:
 (check-expect (listof-X-template empty) )
@@ -51,6 +70,7 @@
         [(cons? lox) ... (first lox)
                      ... (listof-X-template (rest lox)) ...]))\n
 ;; Tests")
+
     #| Defaults from complete-word plugin of quickscript extras
     ("dsr"   "(define-syntax-rule (" ")\n  )")
     ("ds"    "(define-syntax " "\n  )")
