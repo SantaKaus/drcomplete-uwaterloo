@@ -8,6 +8,8 @@
 ;;
 
 #lang s-exp framework/keybinding-lang
+(require drracket/tool-lib srfi/2)
+(require (for-syntax racket/list))
 
 (define (menu-bind key menu-item)
   (keybinding
