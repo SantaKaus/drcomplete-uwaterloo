@@ -1,4 +1,9 @@
 #lang info
+
+(define drracket-tools '(("tool.rkt")))
+(define drracket-tool-names '("drracket-paredit"))
+(define drracket-tool-icons '(#f))
+
 (define collection "drcomplete-uwaterloo")
 (define deps '("base"))
 (define build-deps '("scribble-lib" "racket-doc" "rackunit-lib"))
